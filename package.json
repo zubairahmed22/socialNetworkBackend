@@ -5,7 +5,7 @@
   "main": "index.js",
 
   "scripts": {
-    "start": "nodemon -r esm index.js"
+    "start": "index.js"
   },
   "keywords": [],
   "author": "",
