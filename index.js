@@ -3,10 +3,11 @@ import mongoose from "mongoose"
 import cors from "cors"
 import {readdirSync} from "fs" 
 
-const morgan = require("morgan")
-require('dotenv').config()
+import morgan from "morgan"
+import dotenv from 'dotenv'
 
 const app = express();
+dotenv.config()
 mongoose.connect(process.env.DATABASE,{
    
 }).then(() => console.log("DB CONNECTED"))
@@ -20,7 +21,7 @@ app.use(cors({
 }))
 
 // autoload routes
-readdirSync("./routes").map((r) => app.use('/api', require(`./routes/${r}`)))
+// readdirSync("./routes").map((r) => app.use('/api', require(`./routes/${r}`)))
 
 const port =  process.env.PORT || 8000
 app.listen(port,() => console.log(`server Running on port ${port}`))

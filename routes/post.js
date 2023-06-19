@@ -1,4 +1,4 @@
-import express from "express"
+const  express =  require("express")
 import formidable from "express-formidable"
 const router = express.Router();
 import {createPost} from "../controller/post"
